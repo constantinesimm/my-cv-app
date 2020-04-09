@@ -13,6 +13,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const { mongoDatabase } = require('./server/service');
 const { HttpError } = require('./server/middleware');
+const controller = require('./server/controller');
 
 const server = express();
 
@@ -30,11 +31,15 @@ server.use(logger('dev'));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(cookieParser());
+server.use(express.static(path.join(__dirname, 'dist')));
 server.use(express.static(path.join(__dirname, 'public')));
+server.get('*', (req, res) => res.sendFile('index.html', { root: 'dist'}));
 
 /**
  * app controller routes
  */
+server.use('/api', controller.createPDF);
+
 
 /**
  * catch 404 error and send to error handler fn

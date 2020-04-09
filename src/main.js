@@ -31,7 +31,7 @@ Vue.config.productionTip = process.env.NODE_ENV === 'development';
 
 Vue.prototype.$eventHub = new Vue();
 Vue.prototype.$http = Axios;
-Vue.prototype.$http.baseURL = appOpts.apiEndpoint;
+Vue.prototype.$http.defaults.baseURL = appOpts.apiEndpoint;
 
 Vue.use(ShardsVue);
 

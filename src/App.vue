@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="header">
+    <div class="header d-print-none">
       <PageHeader/>
     </div>
     <d-container fluid>

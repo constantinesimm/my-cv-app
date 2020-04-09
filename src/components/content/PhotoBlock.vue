@@ -33,6 +33,14 @@
         }
     }
 
+    @media print {
+        .fixed-container {
+            position: relative;
+        }
+        .fixed-element {
+            position: relative;
+        }
+    }
     @media (max-width: 992px) {
         img {
             width: 150px;

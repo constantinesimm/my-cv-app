@@ -34,6 +34,12 @@
         position: fixed;
         z-index: 2;
     }
+
+    @media print {
+        .fixed-element {
+            position: relative;
+        }
+    }
     .alert {
         width: 200px;
         border-radius: 0 .75rem .75rem 0;

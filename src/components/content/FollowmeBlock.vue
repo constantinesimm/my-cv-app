@@ -52,6 +52,16 @@
             width: 75%;
         }
     }
+
+    @media print {
+        .fixed-container {
+            position: relative;
+        }
+        .fixed-element {
+            position: relative;
+        }
+    }
+
     ul {
         margin: 0 0 15px 0;
         padding-left: 10px;
@@ -64,9 +74,9 @@
         opacity: .5;
     }
     li > img {
-        width: 35px;
-        height: 35px;
-        margin-right: 15px;
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
     }
     li > a {
         display: inline-block;

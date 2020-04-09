@@ -23,8 +23,8 @@
                                 <d-card-body class="no-pd-left">
                                     <h5 class="card-title">Languages</h5>
                                     <h6 class="card-subtitle mb-2 text-muted">
-                                        <p><span class="font-weight-bold">Ukrainian</span>: Advanced</p>
-                                        <p><span class="font-weight-bold">Russian</span>: Advanced</p>
+                                        <p><span class="font-weight-bold">Ukrainian</span>: Native</p>
+                                        <p><span class="font-weight-bold">Russian</span>: Native</p>
                                         <p><span class="font-weight-bold">English</span>: Pre-intermediate</p>
                                     </h6>
                                 </d-card-body>
@@ -63,13 +63,11 @@
                                 <d-card-body class="no-pd-left">
                                     <h5 class="card-title">Technologies and Libraries</h5>
                                     <h6 class="card-subtitle mb-2 text-muted">
-                                        <p><span class="font-weight-bold">Web</span>: HTML5, CSS3, xPath</p>
-                                        <p><span class="font-weight-bold">JavaScript</span>: ES5, ES6, CommonJS</p>
-                                        <p><span class="font-weight-bold">JS Frameworks</span>: Express.js, Vue.js</p>
-                                        <p><span class="font-weight-bold">CSS and UI Frameworks</span>: Bootstrap, Shards-ui, Bulma</p>
+                                        <p><span class="font-weight-bold">VCS</span>: Git </p>
+                                        <p><span class="font-weight-bold">Web</span>: HTML5, CSS3, xPath, JS(ES5, ES6, CommonJS)</p>
                                         <p><span class="font-weight-bold">Database</span>: Mongo DB, PostgreSQL</p>
-                                        <p><span class="font-weight-bold">Libraries</span>: Socket.io, Passport.js, Mongoose, Nodemailer.js, Puppeteer.js, Vuex, Bcrypt.js, JWT etc...</p>
-                                        <p><span class="font-weight-bold">VCS</span>: Git (Github, Gitlab, Bitbucket, Heroku Git)</p>
+                                        <p><span class="font-weight-bold">Frameworks</span>: Express.js, Vue.js, Bootstrap, Shards-ui, Bulma</p>
+                                        <p><span class="font-weight-bold">Package</span>: Socket.io, Passport.js, Mongoose, Nodemailer.js, Puppeteer.js etc...</p>
                                     </h6>
                                 </d-card-body>
                             </d-card>
@@ -80,9 +78,8 @@
                                     <h5 class="card-title">Soft and Services</h5>
                                     <h6 class="card-subtitle mb-2 text-muted">
                                         <p><span class="font-weight-bold">Google</span>: Analytics, Tag Manager, Ads, Firebase, Drive, Docs</p>
-                                        <p><span class="font-weight-bold">CRM</span>: Pipedrive, ZohoCRM, Salesforce, AmoCRM, Bitrix24, RetailCRM</p>
                                         <p><span class="font-weight-bold">Troubleshooting & Monitoring</span>: Redmine, Homer, Graylog, Fail2web</p>
-                                        <p><span class="font-weight-bold">Others</span>: Я.Метрика, Heroku, Postman, MongoDB Compass</p>
+                                        <p><span class="font-weight-bold">Others</span>: Heroku, Postman, MongoDB Compass</p>
                                     </h6>
                                 </d-card-body>
                             </d-card>
@@ -121,7 +118,7 @@
         cursor: pointer;
     }
     .card-body {
-        padding: 1.5rem;
+        padding: 1rem 1.5rem 0 1.5rem;
     }
     .card-body > p {
         margin: 0;
