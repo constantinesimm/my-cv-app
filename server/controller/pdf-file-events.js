@@ -5,7 +5,7 @@ const service = require('../services');
 const { HttpError } = require('../middleware');
 
 router.post('/cv/download/pdf', async (req, res, next) => {
-    service
+    await service
         .printPDF(`http://localhost:3000`)
         .then(pdf => {
             res.writeHead(200, {
