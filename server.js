@@ -8,10 +8,11 @@ if (process.env.NODE_ENV !== 'production') require('dotenv').config();
  */
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const { mongoDatabase } = require('./server/service');
+const { mongoDatabase } = require('./server/components');
 const { HttpError } = require('./server/middleware');
 const controller = require('./server/controller');
 
@@ -27,6 +28,7 @@ mongoDatabase()
 /**
  * app global middleware
  */
+if (process.env.NODE_ENV !== 'production') server.use(cors());
 server.use(logger('dev'));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: false }));
@@ -38,7 +40,7 @@ server.get('*', (req, res) => res.sendFile('index.html', { root: 'dist'}));
 /**
  * app controller routes
  */
-server.use('/api', controller.createPDF);
+server.use('/api/v1', controller.createPDF);
 
 
 /**

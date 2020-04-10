@@ -1,7 +1,7 @@
 <template>
     <d-container class="page">
         <d-row>
-            <d-col cols="12" md="3" lg="3" class="contact-column">
+            <d-col cols="12" md="4" lg="3" class="contact-column">
                 <div class="contact-column-container">
                     <PhotoBlock/>
                     <d-row>
@@ -13,9 +13,9 @@
                     </d-row>
                 </div>
             </d-col>
-            <d-col cols="12" md="9" lg="9" class="content-column">
+            <d-col cols="12" md="8" lg="9" class="content-column">
                 <NameBlock/>
-                <d-row>
+                <d-row class="main-content">
                     <d-col>
                         <ProfileBlock/>
                         <ExperienceBlock/>
@@ -51,9 +51,19 @@
     .contact-column-container {
         position: relative;
     }
+    .main-content {
+        margin-top: 80px;
+    }
     @media (max-width: 768px) {
+        .container {
+            width: 100%;
+            max-width: unset;
+        }
         .contact-column {
-            margin-top: 110px;
+            margin-top: 95px;
+        }
+        .main-content {
+            margin-top: 15px;
         }
     }
 </style>

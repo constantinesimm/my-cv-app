@@ -10,15 +10,19 @@
         </d-col>
       </d-row>
     </d-container>
+    <send-file-by-email/>
   </div>
 </template>
 
 <script>
   import PageHeader from './components/partial/PageHeader';
+  import SendFileByEmail from "./components/modal/SendFileByEmail";
+
   export default {
     name: 'App',
     components: {
-      PageHeader
+      PageHeader,
+      SendFileByEmail
     }
   }
 </script>
@@ -33,6 +37,6 @@
     -moz-osx-font-smoothing: grayscale;
   }
   .header {
-    height: 68px;
+    height: 65px;
   }
 </style>
