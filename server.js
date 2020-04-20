@@ -1,13 +1,8 @@
 /**
- * if app environment mode is development - get env variables
- */
-if (process.env.NODE_ENV !== 'production') require('dotenv').config();
-
-/**
  * define app dependencies
  */
 const express = require('express');
-const path = require('path');
+const { join } = require('path');
 const cors = require('cors');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
@@ -33,8 +28,8 @@ server.use(logger('dev'));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(cookieParser());
-server.use(express.static(path.join(__dirname, 'dist')));
-server.use(express.static(path.join(__dirname, 'public')));
+server.use(express.static(join(__dirname, 'dist')));
+server.use(express.static(join(__dirname, 'public')));
 server.get('*', (req, res) => res.sendFile('index.html', { root: 'dist'}));
 
 /**
