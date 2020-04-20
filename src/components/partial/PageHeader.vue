@@ -44,7 +44,7 @@
                         cardImage: "../../assets/images/flags/ru.png"
                     }
                 ],
-                link: `${ window.location.protocol }//${ window.location.hostname }:3000`
+                targetPageLink: `${ window.location.protocol }//${ window.location.host }`
             }
         },
         methods: {
@@ -53,7 +53,7 @@
 
                 Axios({
                     method: 'POST',
-                    url: `/v1/cv/download/pdf`,
+                    url: `/v1/cv/download/pdf?host=${ this.targetPageLink }`,
                     responseType: 'blob'
                 })
                     .then(({ data }) => {
