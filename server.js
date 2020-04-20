@@ -1,9 +1,4 @@
 /**
- * if app environment mode is development - get env variables
- */
-if (process.env.NODE_ENV !== 'production') require('dotenv').config();
-
-/**
  * define app dependencies
  */
 const express = require('express');
