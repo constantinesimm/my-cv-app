@@ -5,7 +5,7 @@ const { HttpError } = require('../middleware');
  * generate PDF from web page and download
  */
 const printPDF = async (cvPage) => {
-    const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'], headless: true });
+    const browser = await puppeteer.launch({ args: ['--no-sandbox'], headless: true });
     const page = await browser.newPage();
 
     await page.setViewport({ width: 1024, height: 768 });
