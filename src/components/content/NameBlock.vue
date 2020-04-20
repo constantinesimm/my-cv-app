@@ -3,7 +3,7 @@
         <d-col class="no-pd-left fixed-container">
             <div class="card-body fixed-element">
                 <h3 class="card-title">Konstantin Peschanov</h3>
-                <h6 class="card-subtitle mb-2 text-muted">Junior Node.js Developer</h6>
+                <h6 class="card-subtitle text-muted">Junior JavaScript developer (Node.js / Vue.js)</h6>
             </div>
         </d-col>
     </d-row>
@@ -21,7 +21,7 @@
 
     }
     .fixed-container {
-        height: 125px;
+        height: 15px;
     }
     .fixed-element {
         position: fixed;
@@ -33,8 +33,19 @@
     @media (max-width: 768px) {
         .fixed-element {
             position: fixed;
-            top: 0;
+            top: 65px;
         }
     }
 
+    @media print {
+        .fixed-container {
+            position: relative;
+        }
+        .fixed-element {
+            position: relative;
+        }
+    }
+    .card-body {
+        padding: 1rem 1.5rem;
+    }
 </style>

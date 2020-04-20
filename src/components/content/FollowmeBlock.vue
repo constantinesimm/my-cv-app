@@ -2,16 +2,23 @@
     <d-row>
         <d-col class="no-pd-left fixed-container">
             <div class="fixed-element">
-                <d-alert show theme="primary" class="block-title">Follow Me</d-alert>
+                <div class="block-title block-title-primary">Social</div>
                 <ul>
-                    <li >
-                        <img src="../../assets/images/icons/github.png" alt="github-icon"/><a href="https://github.com/constantinesimm" target="_blank" v-d-tooltip.hover.top="'Github profile'">constantinesimm</a>
+                    <li>
+                        <i class="fab fa-github fa-lg"></i>
+                        <a href="https://github.com/constantinesimm" target="_blank">constantinesimm</a>
                     </li>
                     <li>
-                        <img src="../../assets/images/icons/facebook.png" alt="facebook-icon"/><a href="https://facebook.com/konstantin.peschanov" target="_blank" v-d-tooltip.hover.right="'Facebook profile'">konstantin.peschanov</a>
+                        <i class="fab fa-facebook fa-lg"></i>
+                        <a href="https://facebook.com/konstantin.peschanov" target="_blank">konstantin.peschanov</a>
                     </li>
                     <li>
-                        <img src="../../assets/images/icons/linkedin.png" alt="linkedin-icon"/><a href="https://linkedin.com/in/konstantin-peschanov-273812100/" target="_blank" v-d-tooltip.hover.bottom="'LinkedIn profile'">konstantin-peschanov</a>
+                        <i class="fab fa-linkedin fa-lg"></i>
+                        <a href="https://linkedin.com/in/konstantin-peschanov-273812100/" target="_blank">konstantin-peschanov</a>
+                    </li>
+                    <li>
+                        <i class="fab fa-instagram fa-lg"/>
+                        <a href="https://www.instagram.com/constantinesimm/" target="_blank">constantinesimm</a>
                     </li>
                 </ul>
             </div>
@@ -29,49 +36,115 @@
     .no-pd-left {
         padding-left: 0;
     }
+    .fixed-container .fixed-element > .block-title {
+        padding: 5px 0 5px 25px;
+        background-color: transparent!important;
+        border-left-width: 0;
+        border-top-left-radius: unset;
+        border-bottom-left-radius: unset;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        font-size: 1.15rem;
+        font-weight: bold;
+    }
+    .block-title:before {
+        content:'';
+        position: absolute;
+        display: inline-block;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 39px;
+        color: #007bff;
+        background-color: #007bff42;
+        border-radius: 0 10px 10px 0;
+        transition: all 1.5s ease;
+    }
+
+    .fixed-container .fixed-element > .block-title-primary {
+        color: #007bff;
+    }
+    .block-title-primary:hover {
+        border-color: #007bff
+    }
     .fixed-container {
-        height: 181px;
+        height: 235px;
     }
     .fixed-element {
         position: fixed;
         z-index: 2;
     }
-    .alert {
-        width: 200px;
-        border-radius: 0 .75rem .75rem 0;
-        padding: 0.25rem 1rem;
-        font-size: 1rem;
-        font-weight: 500;
+    .fixed-element:hover .block-title:before {
+        width: 100%;
     }
 
     @media (max-width: 768px) {
         .fixed-element {
             position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
-        .alert {
-            width: 75%;
+        ul {
+            width: 700px;
+            max-width: 767px;
+        }
+
+        li > a {
+            font-size: 1rem!important;
         }
     }
+    @media (max-width: 1999px) {
+        ul {
+            width: 230px;
+        }
+    }
+    @media (min-width: 1200px) {
+        ul {
+            width: 280px;
+        }
+    }
+    @media print {
+        .fixed-container {
+            position: relative;
+        }
+        .fixed-element {
+            position: relative;
+        }
+    }
+
     ul {
-        margin: 0 0 15px 0;
-        padding-left: 10px;
+        padding: 0;
         list-style: none;
     }
     li {
-        margin: 5px 0;
+        margin: 10px 0;
+        font-size: 1.25rem;
+        display: flex;
+        flex-direction: row;
+        padding-left: 15px;
+        align-items: center;
     }
     li:hover {
-        opacity: .5;
+        color: #007bff;
     }
-    li > img {
-        width: 35px;
-        height: 35px;
-        margin-right: 15px;
+    li > i:first-child {
+        width: 30px;
+        height: 30px;
+        padding-right: 15px;
     }
     li > a {
-        display: inline-block;
-        font-size: .9rem;
+        display: flex;
+        flex-direction: row;
+        color: #868e96;
+        font-size: 1rem;
         font-weight: 500;
+        padding-left: 15px;
+        text-decoration: none;
+    }
+    li:hover > a {
+        color: #007bff;
     }
 
     li > a:before {
@@ -80,14 +153,16 @@
         display: inline-block;
         top: auto;
         margin-top: 25px;
-        left: 60px;
+        left: 50px;
         width: 0;
         height: 3px;
         background: #007bff;
         border-radius: 5px;
         transition: all 1.5s ease;
     }
+    /*
     li > a:hover:before {
         width: 75%;
     }
+     */
 </style>
