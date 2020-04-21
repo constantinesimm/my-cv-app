@@ -21,13 +21,23 @@ mongoDatabase()
     .catch(error => console.log(`MongoDB connection error with message: "${ error }"`));
 
 /**
- * app global middleware
+ * app dev middleware
  */
-if (process.env.NODE_ENV !== 'production') app.use(cors());
-app.use(logger('dev'));
+if (process.env.NODE_ENV !== 'production') {
+    app.use(cors());
+    app.use(logger('dev'));
+}
+
+/**
+ * app data parsers
+ */
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+/**
+ * app static paths and files
+ */
 app.use(express.static(join(__dirname, 'dist')));
 app.use(express.static(join(__dirname, 'public')))
 app.get('*', (req, res) => res.sendFile('index.html', { root: 'dist'}));
@@ -38,18 +48,17 @@ app.get('*', (req, res) => res.sendFile('index.html', { root: 'dist'}));
 app.use('/api/v1', controller.createPDF);
 
 /**
+ * app error handlers
  * catch 404 error and send to error handler fn
+ * app central error handler
  */
 app.use((req, res, next) => next(new HttpError(404, `Not Found ${req.path}`)));
 
-/**
- * app central error handler
- */
-app.use((error, req, res, next) => {
-    if (error.status) return res.status(error.status).json({ message: error.message });
-    if (error.errors) return res.status(400).json({ error: { name: error.name, errors: error.errors } });
+app.use((err, req, res, next) => {
+    if (err.status) return res.status(err.status).json({ message: err.message });
+    if (err.errors) return res.status(400).json({ error: { name: err.name, errors: err.errors } });
 
-    next(error);
+    next(err);
 });
 
 module.exports = app;
