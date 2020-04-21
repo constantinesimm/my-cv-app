@@ -14,7 +14,7 @@ module.exports = (tmpl, data) => {
         attachments: [
             {
                 filename: 'konstantin_peschanov_cv.pdf',
-                path: 'public/files/',
+                path: 'public/generated-files/',
                 contentType: "application/pdf"
             }
         ],
