@@ -8,12 +8,14 @@
                     <half-circle-spinner v-else :animation-duration="1000" :size="26" color="#ffffff" class="spinner-botton"/>
                 </div>
             </d-button>
-            <d-button class="action-btn" size="sm" pill @click="sendFileByEmail">
-                <i class="far fa-paper-plane fa-2x"/>
-                <div class="spinner-botton">
-                    <span>Send email</span>
-                </div>
-            </d-button>
+            <!--
+                <d-button class="action-btn" size="sm" pill @click="sendFileByEmail">
+                    <i class="far fa-paper-plane fa-2x"/>
+                    <div class="spinner-botton">
+                        <span>Send email</span>
+                    </div>
+                </d-button>
+            -->
         </d-navbar-nav>
     </d-navbar>
 </template>
