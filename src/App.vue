@@ -1,28 +1,42 @@
 <template>
-  <div id="server">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <div class="header d-print-none">
+      <PageHeader/>
+    </div>
+    <d-container fluid>
+      <d-row>
+        <d-col>
+          <router-view/>
+        </d-col>
+      </d-row>
+    </d-container>
+    <send-file-by-email/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import PageHeader from './components/partial/PageHeader';
+  import SendFileByEmail from "./components/modal/SendFileByEmail";
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  export default {
+    name: 'App',
+    components: {
+      PageHeader,
+      SendFileByEmail
+    }
   }
-}
 </script>
 
 <style>
-#server {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #app {
+    height: 99vh;
+    width: 98vw;
+    margin: auto;
+    font-family: 'Ubuntu', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .header {
+    height: 65px;
+  }
 </style>
