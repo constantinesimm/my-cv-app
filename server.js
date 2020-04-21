@@ -2,7 +2,6 @@
  * define app dependencies
  */
 const express = require('express');
-const fs = require('fs');
 const { join } = require('path');
 const cors = require('cors');
 const logger = require('morgan');
@@ -12,7 +11,7 @@ const { mongoDatabase } = require('./server/components');
 const { HttpError } = require('./server/middleware');
 const controller = require('./server/controller');
 
-const server = express();
+const app = express();
 
 /**
  * connect MongoDB
@@ -24,37 +23,37 @@ mongoDatabase()
 /**
  * app global middleware
  */
-if (process.env.NODE_ENV !== 'production') server.use(cors());
-server.use(logger('dev'));
-server.use(bodyParser.json());
-server.use(bodyParser.urlencoded({ extended: false }));
-server.use(cookieParser());
-server.use(express.static(join(__dirname, 'dist')));
-server.use(express.static(join(__dirname, 'public')))
+if (process.env.NODE_ENV !== 'production') app.use(cors());
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(join(__dirname, 'dist')));
+app.use(express.static(join(__dirname, 'public')))
 
-server.get('/.well-known/acme-challenge/:link', (req, res) => {
+app.get('/.well-known/acme-challenge/:link', (req, res) => {
     if (req.params.link === 'SsuC3iP3RI1V3neVCHRG_rm-ME_JQ106-XPbx2hqvmE') res.send('SsuC3iP3RI1V3neVCHRG_rm-ME_JQ106-XPbx2hqvmE.hl9UFsx6RJv3fmBlHKMklQCzUi4hucdLb5qCF3XIzi4');
 });
 
-server.get('*', (req, res) => res.sendFile('index.html', { root: 'dist'}));
+app.get('*', (req, res) => res.sendFile('index.html', { root: 'dist'}));
 /**
  * app controller routes
  */
-server.use('/api/v1', controller.createPDF);
+app.use('/api/v1', controller.createPDF);
 
 /**
  * catch 404 error and send to error handler fn
  */
-server.use((req, res, next) => next(new HttpError(404, `Not Found ${req.path}`)));
+app.use((req, res, next) => next(new HttpError(404, `Not Found ${req.path}`)));
 
 /**
  * app central error handler
  */
-server.use((error, req, res, next) => {
+app.use((error, req, res, next) => {
     if (error.status) return res.status(error.status).json({ message: error.message });
     if (error.errors) return res.status(400).json({ error: { name: error.name, errors: error.errors } });
 
     next(error);
 });
 
-module.exports = server;
+module.exports = app;

@@ -13,18 +13,10 @@ const printPDF = async (cvPage) => {
     await page.setViewport({ width: 1920, height: 1080 });
     await page.goto(cvPage, { waitUntil: 'networkidle0'});
 
-    const publicPath = join(__dirname + '../../../public/generated-files');
-
-    fs.stat(publicPath, (err, stats, next) => {
-        if (err.code === 'ENOENT') {
-            fs.mkdir(publicPath, { recursive: true }, (err) => {
-                if (err) {
-                    console.log('mkdir', err);
-                    next();
-                }
-            })
-        }
+    fs.stat(join(__dirname + '../../../public/generated-files'), (err, stats, next) => {
+        if (err.code === 'ENOENT') fs.mkdir(join(__dirname + '../../../public/generated-files'), { recursive: true }, () => next())
     });
+
     const pdf = await page.pdf({
         path: 'public/generated-files/konstantin_peschanov_cv.pdf',
         printBackground: true,
