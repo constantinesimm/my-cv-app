@@ -11,14 +11,14 @@
   },
   "main": "server.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node server/bin/www",
+    "start": "node server/bin/www",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "dev:app": "cross-env NODE_ENV=development concurrently \"npm run serve\" \"npm run dev:server\"",
-    "dev:server": "cross-env NODE_ENV=development nodemon server/bin/www",
-    "dev:static": "cross-env NODE_ENV=development npm run build && npm run dev:server",
-    "postinstall": "cross-env NODE_ENV=production npm run build"
+    "dev:app": "concurrently \"npm run serve\" \"npm run dev:server\"",
+    "dev:server": "nodemon server/bin/www",
+    "dev:static": "npm run build && npm run dev:server",
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "ajv": "^6.12.0",
@@ -53,7 +53,6 @@
     "@vue/cli-service": "~4.3.0",
     "babel-eslint": "^10.1.0",
     "concurrently": "^5.1.0",
-    "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
