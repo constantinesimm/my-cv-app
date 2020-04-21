@@ -68,7 +68,7 @@
                         this.isLoading = false;
                         this.$toast.open({
                             type: 'success',
-                            message: 'PDF-QLCUS-ZJD-sCjWvfc_SJKXgNhNlbEkbttfuByXq6y24 downloaded'
+                            message: 'PDF-file downloaded'
                         })
                     })
                     .catch(err => {
