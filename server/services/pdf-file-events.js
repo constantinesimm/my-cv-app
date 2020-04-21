@@ -14,7 +14,11 @@ const printPDF = async (cvPage) => {
     await page.goto(cvPage, { waitUntil: 'networkidle0'});
 
     fs.stat(join(__dirname + '../../../public/generated-files'), (err, stats, next) => {
-        if (err.code === 'ENOENT') fs.mkdir(join(__dirname + '../../../public/generated-files'), { recursive: true }, () => next())
+        if (err) {
+            fs.mkdir(join(__dirname + '../../../public/generated-files'), { recursive: true }, (err) => {
+                if (err) next();
+            })
+        }
     });
 
     const pdf = await page.pdf({
