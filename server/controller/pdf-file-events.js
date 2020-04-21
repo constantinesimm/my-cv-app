@@ -18,7 +18,7 @@ router.post('/cv/download/pdf', async (req, res, next) => {
         .catch(next);
 });
 
-router.post('/cv/send-to-email/pdf', async (req, res, next) => {
+router.post('/cv/send/pdf', async (req, res, next) => {
 
 });
 
