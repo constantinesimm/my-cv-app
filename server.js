@@ -31,7 +31,7 @@ server.use(bodyParser.urlencoded({ extended: false }));
 server.use(cookieParser());
 server.use(express.static(join(__dirname, 'dist')));
 server.use(express.static(join(__dirname, 'public')))
-server.get('/.well-known/acme-challenge/0mZHZ2Y0g0KReq68qZm_OMPax0NyfkfYGG0fDrhbEOM', (req, res) => res.sendFile('file.txt', { root: 'public'}));
+server.get('/.well-known/acme-challenge/:link', (req, res) => res.sendFile(`${req.params.link}/file.txt`, { root: 'public'}));
 server.get('*', (req, res) => res.sendFile('index.html', { root: 'dist'}));
 /**
  * app controller routes
