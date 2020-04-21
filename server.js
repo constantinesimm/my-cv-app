@@ -31,9 +31,11 @@ server.use(bodyParser.urlencoded({ extended: false }));
 server.use(cookieParser());
 server.use(express.static(join(__dirname, 'dist')));
 server.use(express.static(join(__dirname, 'public')))
+
 server.get('/.well-known/acme-challenge/:link', (req, res) => {
-    if (req.params.link === 'AuPsbjNtKZyzxXAp2yjQ-Qp5cWEdOp7iJZOsgemrdFc') res.send('AuPsbjNtKZyzxXAp2yjQ-Qp5cWEdOp7iJZOsgemrdFc.hl9UFsx6RJv3fmBlHKMklQCzUi4hucdLb5qCF3XIzi4');
+    if (req.params.link === 'SsuC3iP3RI1V3neVCHRG_rm-ME_JQ106-XPbx2hqvmE') res.send('SsuC3iP3RI1V3neVCHRG_rm-ME_JQ106-XPbx2hqvmE.hl9UFsx6RJv3fmBlHKMklQCzUi4hucdLb5qCF3XIzi4');
 });
+
 server.get('*', (req, res) => res.sendFile('index.html', { root: 'dist'}));
 /**
  * app controller routes
