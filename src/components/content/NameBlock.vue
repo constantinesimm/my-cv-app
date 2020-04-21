@@ -3,7 +3,7 @@
         <d-col class="no-pd-left fixed-container">
             <div class="card-body fixed-element">
                 <h3 class="card-title">Konstantin Peschanov</h3>
-                <h6 class="card-subtitle text-muted">Junior JavaScript developer (Node.js / Vue.js)</h6>
+                <!-- <h6 class="card-subtitle text-muted">Junior JavaScript developer (Node.js / Vue.js)</h6> -->
             </div>
         </d-col>
     </d-row>
