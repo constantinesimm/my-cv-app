@@ -1,5 +1,7 @@
 # my-cv
 
+[Live demo is available](https://peschanov-cv.herokuapp.com)
+
 ## Project setup
 ```
 npm install
