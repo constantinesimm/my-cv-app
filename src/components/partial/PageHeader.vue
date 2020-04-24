@@ -1,7 +1,7 @@
 <template>
     <d-navbar fixed="top" type="dark" theme="light" class="d-flex flex-row justify-content-center">
         <d-navbar-nav class="d-flex flex-row justify-content-center">
-            <d-button :disabled="isLoading" pill class="action-btn download-cv_btn" size="sm" @click="getDownloadLink">
+            <d-button :disabled="isLoading" pill class="action-btn tracked_link" id="download_cv" size="sm" @click="getDownloadLink">
                 <i class="far fa-file-pdf fa-2x"/>
                 <div class="spinner-botton">
                     <span v-if="!isLoading"> Download PDF </span>
