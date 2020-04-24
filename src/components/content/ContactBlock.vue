@@ -6,23 +6,23 @@
                 <ul>
                     <li >
                         <i class="fas fa-mobile-alt fa-lg"/>
-                        <a href="tel:+380672230967">+38 (067) 223 09 67</a>
+                        <a href="tel:+380672230967" id="tel_link">+38 (067) 223 09 67</a>
                     </li>
                     <li>
                         <i class="fas fa-at fa-lg"/>
-                        <a href="mailto:constantine.peschanov@gmail.com">k.peschanov@gmail.com</a>
+                        <a href="mailto:constantine.peschanov@gmail.com" id="mail_link">k.peschanov@gmail.com</a>
                     </li>
                     <li>
                         <i class="fab fa-skype fa-lg"/>
-                        <a href="skype:live:constantine.peschanov?chat" target="_blank">live:constantine.peschanov</a>
+                        <a href="skype:live:constantine.peschanov?chat" id="skype_link" target="_blank">live:constantine.peschanov</a>
                     </li>
                     <li>
                         <i class="fab fa-telegram fa-lg"/>
-                        <a href="tg://resolve?domain=ConstantineSimm" target="_blank">@ConstantineSimm</a>
+                        <a href="tg://resolve?domain=ConstantineSimm" id="tg_link" target="_blank">@ConstantineSimm</a>
                     </li>
                     <li>
                         <i class="fab fa-viber fa-lg"/>
-                        <a href="viber://chat?number=380672230967" target="_blank">+38 (067) 223 09 67</a>
+                        <a href="viber://chat?number=380672230967" id="viber_link" target="_blank">+38 (067) 223 09 67</a>
                     </li>
                 </ul>
             </div>
