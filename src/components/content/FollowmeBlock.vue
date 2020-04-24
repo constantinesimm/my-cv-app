@@ -6,19 +6,19 @@
                 <ul>
                     <li>
                         <i class="fab fa-github fa-lg"></i>
-                        <a href="https://github.com/constantinesimm" target="_blank">constantinesimm</a>
+                        <a href="https://github.com/constantinesimm" class="tracked_link" id="github_link" target="_blank">constantinesimm</a>
                     </li>
                     <li>
                         <i class="fab fa-facebook fa-lg"></i>
-                        <a href="https://facebook.com/konstantin.peschanov" target="_blank">konstantin.peschanov</a>
+                        <a href="https://facebook.com/konstantin.peschanov" class="tracked_link" id="fb_link" target="_blank">konstantin.peschanov</a>
                     </li>
                     <li>
                         <i class="fab fa-linkedin fa-lg"></i>
-                        <a href="https://linkedin.com/in/konstantin-peschanov-273812100/" target="_blank">konstantin-peschanov</a>
+                        <a href="https://linkedin.com/in/konstantin-peschanov-273812100/" class="tracked_link" id="linkedIn_link" target="_blank">konstantin-peschanov</a>
                     </li>
                     <li>
                         <i class="fab fa-instagram fa-lg"/>
-                        <a href="https://www.instagram.com/constantinesimm/" target="_blank">constantinesimm</a>
+                        <a href="https://www.instagram.com/constantinesimm/" class="tracked_link" id="insta_link" target="_blank">constantinesimm</a>
                     </li>
                 </ul>
             </div>
