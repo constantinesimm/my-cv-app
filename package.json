@@ -74,8 +74,8 @@
     "rules": {}
   },
   "engines": {
-    "node": "12.x",
-    "npm": "6.x"
+    "node": "14.x",
+    "npm": "8.x"
   },
   "browserslist": [
     "> 1%",
